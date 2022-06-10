@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="index.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+
+<body>
+    
+
+    <h1> A inflação no seu salário </h1>
+
+    <p>Durante a pandemia, o aumento de preços generalizado voltou a prejudicar a renda dos brasileiros. Segundo o IBGE, a inflação calculada pelo IPCA chegou a 10,06% em 2021 e alcançou 12,13% nos 12 meses até abril de 2022.</p>
+
+    <p>Mas esse cenário não é exclusivo do período do isolamento social. Nos últimos 10 anos, a inflação teve aumento de 89,6%. </p> 
+
+    <h2>Com um avanço de preços tão forte, quanto deveria ser o seu salário em valores atuais?</h2>
+
+
+
+    <p>Faça o cálculo inserindo a renda entre 2011-2021</p>
+
+   
+
+
+    <input>
+
+   
+    <select>
+        <option value="2011">2011</option>
+        <option value="2012">2012</option>
+        <option value="2013">2013</option>
+        <option value="2014">2014</option>
+        <option value="2015">2015</option>
+        <option value="2016">2016</option>
+        <option value="2017">2017</option>
+        <option value="2018">2018</option>
+        <option value="2019">2019</option>
+        <option value="2020">2020</option>
+        <option value="2021">2021</option>
+
+    </select>
+
+    <p>Dessa forma, seu salário hoje seria</p>
+
+    <p class="output"></p> 
+
+    <script> 
+        
+        let deflatores = {2011: 1.9152, 2012: 1.7983, 2013: 1.6991, 2014: 1.6043, 2015: 1.5076, 2016: 1.3623, 2017: 1.2816, 2018: 1.2449, 2019: 1.1999, 2020: 1.1503, 2021: 1.1006, 2022: 1}
+
+        let numero = new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' });
+
+        let entradaSalario = document.querySelector("input" )
+
+        let seletorAno = document.querySelector("select" )
+
+        let saida = document.querySelector(".output" )
+
+
+        seletorAno.addEventListener("change", validar )
+
+        entradaSalario.addEventListener("input", validar)
+
+        function validarSalario(){
+
+        }
+
+        
+
+        function validar(e) {
+            let anoSelecionado = seletorAno.value
+
+            let salario = parseInt(entradaSalario.value)
+
+        if (salario > 0 && anoSelecionado != ""){
+
+
+            let deflator = deflatores[anoSelecionado]
+
+            let salarioAtualizado = salario * deflator
+
+            saida.textContent = numero.format(salarioAtualizado)
+
+            console.log(salario, anoSelecionado, deflatores[anoSelecionado])
+            
+}
+
+    
+    
+
+        }
+
+     
+    
+  
+        
+
+    </script>
+
+
+</body>
+</html>
