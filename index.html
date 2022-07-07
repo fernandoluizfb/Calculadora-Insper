@@ -53,19 +53,26 @@
 
     <script> 
         
+        // Estabelece a inflação de acordo com o ano selecionado
         let deflatores = {2011: 1.9152, 2012: 1.7983, 2013: 1.6991, 2014: 1.6043, 2015: 1.5076, 2016: 1.3623, 2017: 1.2816, 2018: 1.2449, 2019: 1.1999, 2020: 1.1503, 2021: 1.1006, 2022: 1}
 
+        // Código para permitir a inserção dos valores em R$
         let numero = new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' });
 
+        // Ativa o número da entrada       
         let entradaSalario = document.querySelector("input" )
 
+        // Seleciona o ano desejado
         let seletorAno = document.querySelector("select" )
 
+        // Mostra o resultado na saída
         let saida = document.querySelector(".output" )
 
-
+        
+        // "Ouve" e valida o número do ano escolhido
         seletorAno.addEventListener("change", validar )
 
+        // "Ouve" e valida o evento em "entradaSalario"
         entradaSalario.addEventListener("input", validar)
 
         function validarSalario(){
@@ -73,10 +80,13 @@
         }
 
         
-
+  
         function validar(e) {
+
+            // Ativa o valor dentro do "seletorAno"
             let anoSelecionado = seletorAno.value
 
+                  // Faz a conversão de uma string
             let salario = parseInt(entradaSalario.value)
 
         if (salario > 0 && anoSelecionado != ""){
