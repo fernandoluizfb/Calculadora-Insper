@@ -4,9 +4,37 @@ body {
     color: #ffffff;
     text-align: center;
     padding: 10%;
-    
-    margin-top: 5%;
-    margin-left: 5%;
-    margin-right: 5%;
+    border: 5px dotted grey;
 
+    margin-top: 5%;
+    margin-left: 140px;
+    margin-right: 140px;
+
+    font-style: fantasy;
     }
+
+h1 {
+
+    font-size: 50px;
+    margin-bottom: 60px;
+    margin-top: -30px;
+}
+
+p {
+    margin-left: 140px;
+    margin-right: 140px;
+    padding: 5px;
+    font-size: 18px;
+}
+
+h2 {
+    margin-top: 60px;
+    margin-bottom: 60px;
+    margin-left: 140px;
+    margin-right: 140px;
+}
+
+.texto > div {
+    margin-top: 10px;
+    margin-bottom: -20px;
+}
